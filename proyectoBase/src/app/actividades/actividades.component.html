@@ -1,0 +1,26 @@
+<div class="container border-light-subtle">
+    <div class="card border-light-subtle">
+        <div class="card-header">
+            <h1 class="card-title text-center text-info"> {{titulo}} </h1>
+        </div>
+        <div class="card-body text-center text-primary">
+            <form>
+                <div class="mb-3 ">
+                  <label for="exampleInputEmail1" class="form-label">Primer valor</label>
+                  <input type="number" class="form-control" id="exampleInputEmail1" name="v1" [(ngModel)]="valor1">
+                </div>
+            
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Segundo Valor</label>
+                  <input type="number" class="form-control" id="exampleInputPassword1"  name="v2" [(ngModel)]="valor2">
+                </div>
+                
+                <button type="submit" class="btn btn-primary" (click)="sum()">Sumar</button>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">El resultado de la SUMA es:  {{res}}</label>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

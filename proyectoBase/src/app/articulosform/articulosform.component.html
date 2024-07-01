@@ -1,0 +1,63 @@
+<div class="container border-light-subtle">
+    <div class="card border-light-subtle">
+        <div class="card-header">
+            <h1 class="card-title text-center text-info"> {{titulo}} </h1>
+        </div>
+        <div class="card-body text-center text-primary">
+            <form>
+                <div class="mb-3 ">
+                  <label for="idC" class="form-label">ID del Artículo</label>
+                  <input type="number" class="form-control" id="idC" name="a1" [(ngModel)]="articulo.idArticulo">
+                </div>
+            
+                <div class="mb-3">
+                  <label for="nombreC" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="nombreC"  name="a2" [(ngModel)]="articulo.nombreArticulo">
+                </div>
+
+                <div class="mb-3">
+                    <label for="descripcionC" class="form-label">Descripción</label>
+                    <input type="text" class="form-control" id="descripcionC"  name="a3" [(ngModel)]="articulo.descripcion">
+                </div>
+
+                <div class="mb-3">
+                    <label for="descripcionC" class="form-label">Existencia</label>
+                    <input type="number" class="form-control" id="descripcionC"  name="a4" [(ngModel)]="articulo.existencia">
+                </div>
+
+                <div class="mb-3">
+                    <label for="descripcionC" class="form-label">Precio</label>
+                    <input type="number" class="form-control" id="descripcionC"  name="a5" [(ngModel)]="articulo.precio">
+                </div>
+
+                <div class="mb-3">
+                    <label for="descripcionC" class="form-label">ID de la Categoria</label>
+                    <input type="text" class="form-control" id="descripcionC"  name="a6" [(ngModel)]="articulo.idCategoria.idCategoria">
+                </div>
+                  
+                <div class="d-grid gap-2">
+                    <button *ngIf="articulo.idArticulo === 0" 
+                    type="submit" 
+                    class="btn btn-primary" 
+                    (click)="registrarArticulo()">Registrar Articulo</button>
+
+                    <button *ngIf="articulo.idArticulo !== 0" 
+                    type="submit" 
+                    class="btn btn-success" 
+                    (click)="updateArticulo()">Actualizar Articulo</button>
+                </div>
+
+                <!-- <div class="d-grid gap-2">
+                    @if (categoria.idCategoria === 0) {
+                        <button type="submit" class="btn btn-primary" (click)="registrarCategoria()">Registrar Datos</button>
+                    } @else {
+                        <button type="submit" class="btn btn-success" (click)="actualizarCategoria()">Actualizar Datos</button>
+                    }
+                </div> -->
+                
+                
+            </form>
+        </div>
+    </div>
+</div>
+

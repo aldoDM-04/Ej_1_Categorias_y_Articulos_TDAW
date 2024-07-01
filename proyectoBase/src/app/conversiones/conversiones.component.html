@@ -1,0 +1,31 @@
+<div class="container border-light-subtle">
+    <div class="card border-light-subtle">
+        <div class="card-header">
+            <h1 class="card-title text-center text-info"> {{titulo}} </h1>
+        </div>
+        <div class="card-body text-center text-primary">
+            <form>
+                <div class="mb-3 ">
+                  <label for="exampleInputEmail1" class="form-label">Temperatura en Grados Celsius</label>
+                  <input type="number" class="form-control" id="exampleInputEmail1" name="v1" [(ngModel)]="celsius">
+                </div>
+
+                <button type="submit" class="btn btn-primary" (click)="convertirCelAFar()">Convertir de Celsius a Fahrenheit</button>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">{{celsius}} °C equivale a {{resF}} F</label>
+                </div>
+            
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Temperatura en Grados Fahrenheit</label>
+                  <input type="number" class="form-control" id="exampleInputPassword1"  name="v2" [(ngModel)]="fahrenheit">
+                </div>
+                
+                <button type="submit" class="btn btn-primary" (click)="convertirFarACel()">Convertir de Fahrenheit a Celsius</button>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">{{fahrenheit}} °F equivale a:  {{resC}} °C.</label>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

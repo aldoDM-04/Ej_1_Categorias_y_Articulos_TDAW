@@ -1,0 +1,48 @@
+<div class="container border-light-subtle">
+    <div class="card border-light-subtle">
+        <div class="card-header">
+            <h1 class="card-title text-center text-danger"> {{titulo}} </h1>
+        </div>
+        <div class="card-body text-center text-primary">
+            <table class="table">
+            
+            </table>
+            <table class="table table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">id de Articulo</th>
+                    <th scope="col">Nombre Articulo</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Existencia</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Categoría</th>
+                    <th scope="col" colspan="2">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of listaDeArticulos">
+                    <th scope="row"> {{item.idArticulo}} </th>
+                    <td> {{item.nombreArticulo}} </td>
+                    <td> {{item.descripcion}} </td>
+                    <td> {{item.existencia}} </td>
+                    <td> {{item.precio}} </td>
+                    <td *ngIf="item.idCategoria">{{item.idCategoria.idCategoria}}</td> <!-- Verificación de la categoría -->
+                    <td *ngIf="!item.idCategoria">Categoría no disponible</td> <!-- Mensaje alternativo -->
+                    <td>
+                        <button type="button" name="editar" class="btn btn-success" [routerLink]="['/articulosForm',item.idArticulo]">
+                            Actualizar
+                        </button>
+                    </td>
+                    <td>
+                        <button type="button" name="eliminar" class="btn btn-outline-danger" (click)="delete(item)">
+                            Eiminar
+                        </button>
+                    </td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+
